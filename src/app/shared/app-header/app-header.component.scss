@@ -1,0 +1,26 @@
+:host {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .app-page-title {
+        margin: 0;
+        color: #ff4961;
+        line-height: 40px;
+        text-align: left;
+        width: 100%;
+    }
+
+
+    .main-menu-burger {
+        display: none;
+    }
+
+    @media only screen and (max-width: 991px) {
+        .main-menu-burger {
+            display: block;
+        }
+    }
+}
+
