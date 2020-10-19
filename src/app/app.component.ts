@@ -3,7 +3,6 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { PROFILE } from './shared/profile';
-import { StartPage } from "start";
 
 @Component({
   selector: "app-root",
