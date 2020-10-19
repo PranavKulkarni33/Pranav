@@ -12,6 +12,7 @@ import { PostsComponent } from './posts/posts.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { AppHeaderComponent } from "./shared/app-header/app-header.component";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -20,19 +21,20 @@ import { AppHeaderComponent } from "./shared/app-header/app-header.component";
     PostsComponent,
     ContactComponent,
     HomeComponent,
-    AppHeaderComponent
+    AppHeaderComponent,
   ],
   entryComponents: [],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent],
 })

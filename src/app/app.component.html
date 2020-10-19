@@ -1,5 +1,6 @@
 
 <ion-app>
+<ion-nav [root]="rootPage"></ion-nav>
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" side="start" type="push">
       <ion-content>
@@ -7,7 +8,6 @@
           <ion-list-header>{{profile.title}}</ion-list-header>
           <br>
           <ion-note> {{profile.subtitle}} </ion-note>
-
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">

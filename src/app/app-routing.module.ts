@@ -19,7 +19,7 @@ const routes: Routes = [
     component: ContactComponent,
   },
   {
-    path: "home",
+    path: "work",
     component: HomeComponent,
   },
   {

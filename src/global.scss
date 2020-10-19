@@ -24,3 +24,18 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+.object-fit-cover {
+    object-fit: cover !important;
+}
+
+.vertical-middle {
+    vertical-align: middle;
+}
+
+.stack-logo {
+    vertical-align: middle;
+    height: 25px;
+    width: 25px;
+}

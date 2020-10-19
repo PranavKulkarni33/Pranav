@@ -3,6 +3,8 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { PROFILE } from './shared/profile';
+import { StartPage } from "start";
+
 @Component({
   selector: "app-root",
   templateUrl: "app.component.html",
@@ -13,8 +15,8 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
-      title: "Home",
-      url: "/home",
+      title: "Work",
+      url: "/work",
       icon: "home",
     },
     {
