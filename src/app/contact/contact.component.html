@@ -1,24 +1,126 @@
-<ion-content fullscreen>
 <app-header [title]="title"></app-header>
 
-<div class="container">
-  <div class="card">
-    
-    <div class="front side">
-      <h1 class="logo">Hrishi</h1>
-    </div>
-    
-    <div class="back side">
-      <h3 class="name">Hrishi</h3>
-      <div>Front-end developer</div>      
-      <div class="info">
-        <p><span class="property">Email: </span>hrishikesh.potdar91@gmail.com</p>
-        <p><span class="property">Twitter: </span>@rxjshi</p>
-        <p><span class="property">Phone: </span>(682) 234-2481</p>
-        <p><span class="property">Website: </span>hrishi.live</p>
+<ion-content class="ion-padding">
+  <ion-row class="ion-padding">
+    <ion-col size-xl="6" size-sm="12">
+      <form name="contact" method="POST" data-netlify="true" [formGroup]="contactForm" (ngSubmit)="submitForm()" autocomplete="false"
+        novalidate>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label position="floating">First Name</ion-label>
+              <ion-input formControlName="firstName" type="text" id="firstName" name="firstName"></ion-input>
+            </ion-item>
+
+            <ion-text color="danger" *ngIf="isSubmitted">
+              <br />
+
+              <div *ngIf="errorControl.firstName.errors?.required">
+                First Name is required.
+              </div>
+              <div class="ion-padding" *ngIf="errorControl.firstName.errors?.minlength">
+                First Name should be min 2 chars long.
+              </div>
+            </ion-text>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label position="floating">Last Name</ion-label>
+              <ion-input type="text" formControlName="lastName" id="lastName" name="lastName"></ion-input>
+            </ion-item>
+
+            <ion-text color="danger" *ngIf="isSubmitted">
+              <br />
+
+              <div *ngIf="errorControl.lastName.errors?.required">
+                Last Name is required.
+              </div>
+              <div class="ion-padding" *ngIf="errorControl.lastName.errors?.minlength">
+                Last Name should be min 2 chars long.
+              </div>
+            </ion-text>
+          </ion-col>
+          <ion-col size="12">
+            <ion-item>
+              <ion-label position="floating">Email</ion-label>
+              <ion-input formControlName="email" type="text" id="email" name="email"></ion-input>
+            </ion-item>
+
+            <ion-text color="danger" *ngIf="isSubmitted">
+              <br />
+              <div *ngIf="errorControl.lastName.errors?.required">
+                Email is required.
+              </div>
+              <div class="ion-padding" *ngIf="errorControl.lastName.errors?.email">
+                Email should be valid.
+              </div>
+            </ion-text>
+          </ion-col>
+
+          <ion-col size="12">
+            <ion-item>
+              <ion-label position="floating">Message</ion-label>
+              <ion-textarea formControlName="message" rows="10" type="text" id="message" name="Message"
+                placeholder="Hi!"></ion-textarea>
+            </ion-item>
+
+            <ion-text color="danger" *ngIf="isSubmitted">
+              <br />
+              <div *ngIf="errorControl.message.errors?.required">
+                Message is required.
+              </div>
+              <div class="ion-padding" *ngIf="errorControl.message.errors?.minlength">
+                This message should probably be more than 50 characters.
+              </div>
+            </ion-text>
+          </ion-col>
+
+          <ion-col size="12" class="ion-text-center">
+            <ion-button expand="full" id="submit" type="submit" value="Send">
+              Send
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </form>
+
+      <ion-text color="primary" class="ion-padding ion-margin ion-text-center">
+        <p> &copy; ALL OF THE RIGHTS RESERVED </p>
+      </ion-text>
+
+    </ion-col>
+    <ion-col>
+      <div class="ion-text-left ion-padding direct-contact-container" *ngIf="profile">
+        <ion-row size-xl="6" size-sm="12">
+          <ion-col size="12">
+            <ion-icon name="pin-outline" class="ion-padding-end"></ion-icon>
+            {{ profile.location }}
+          </ion-col>
+
+          <ion-col size="12">
+            <a href="tel:+1{{ profile.phoneNo }}" target="_blank" title="Give me a call">
+              <ion-icon name="call-outline" class="ion-padding-end"></ion-icon>
+              {{ profile.phoneNo }}
+            </a>
+          </ion-col>
+
+          <ion-col size="12">
+            <a href="mailto:{{ profile.email }}" target="_blank" title="Send me an email">
+              <ion-icon name="send-outline" class="ion-padding-end"></ion-icon>
+              {{ profile.email }}
+            </a>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-icon name="at" class="ion-padding-end"></ion-icon>
+            <a class="ion-padding-end" *ngFor="let platform of profile.social" href="{{ platform.link }}"
+              target="_blank">
+              <img width="25" height="25" [src]="sanitizer.bypassSecurityTrustResourceUrl(platform.icon)"
+                alt="{{ platform.name }}" loading="lazy" />
+            </a>
+          </ion-col>
+        </ion-row>
       </div>
-    </div>
-    
-  </div>
-</div>
+    </ion-col>
+  </ion-row>
 </ion-content>

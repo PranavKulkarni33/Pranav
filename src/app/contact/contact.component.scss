@@ -1,112 +1,170 @@
+#contact {
 
-$padding:30px;
-
-* {
-    box-sizing: border-box;
+    background-color: #111;
+    overflow: hidden;
+    padding-bottom: 200px;
 }
 
-body {
-    background: #757575;
-    overflow-x: hidden;
-}
-
-.container {
-    perspective: 800px;
-
-    /* Styling */
+.section-header {
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 50px;
+    margin-bottom: 50px;
+    font: 300 60px 'Oswald', sans-serif;
+    letter-spacing: 6px;
     color: #fff;
-    font-family: 'Open Sans', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-
-    /* Center it */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-bottom: 25px;
 }
 
-.card {
-    /* Styling */
-    width: 700px;
-    height: 400px;
-    background: rgb(20, 20, 20);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-
-    /* Card flipping effects */
-    transform-style: preserve-3d;
-    transition: 0.6s;
+.contact-wrapper {
+    margin: 0 auto;
+    padding-top: 20px;
+    position: relative;
+    max-width: 800px;
 }
 
-.side {
-    position: absolute;
+/* Begin Right Contact Page */
+.direct-contact-container {
+    font-size: 20px;
+
+    &::ng-deep a {
+        text-decoration: none;
+    }
+}
+
+.contact-text a {
+    color: #bbb;
+    text-decoration: none;
+    transition-duration: 0.2s;
+}
+
+.contact-text a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/* Social Media Icons */
+.social-media-list {
+    position: relative;
+    font-size: 2.3rem;
+    text-align: center;
     width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    /* Fix Chrome rendering bug */
-    transform: rotate(0deg) translateZ(1px);
 }
 
-/* Flip the card on hover */
-.container:hover .card,
-.back {
-    transform: rotateY(-180deg) translateZ(1px);
+.social-media-list li a {
+    color: #fff;
 }
 
-/* Front styling */
-.front {
-    /* Center the name + outline (almost) */
-    line-height: 390px;
-    /* Height - some (because visual center is a little higher than actual center) */
+.social-media-list li {
+    position: relative;
+    top: 0;
+    left: -20px;
+    display: inline-block;
+    height: 70px;
+    width: 70px;
+    margin: 10px auto;
+    line-height: 70px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: rgb(27, 27, 27);
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.social-media-list li:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0 0 0 1px #fff;
+    transition: all .2s ease-in-out;
+}
+
+.social-media-list li:hover {
+    background-color: #fff;
+}
+
+.social-media-list li:hover:after {
+    opacity: 1;
+    transform: scale(1.12);
+    transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+}
+
+.social-media-list li:hover a {
+    color: #111;
+}
+
+.copyright {
+    font: 200 14px 'Oswald', sans-serif;
+    color: #555;
+    letter-spacing: 1px;
     text-align: center;
 }
 
-.logo {
-    outline: 1px solid var(--ion-color-primary);
-    display: inline-block;
-    padding: 15px 40px;
-
-    text-transform: uppercase;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.4em;
-    font-weight: normal;
-    line-height: 32px;
-    letter-spacing: 8px;
+hr {
+    border-color: white;
+    ;
 }
 
-/* Back styling */
-.back {
-    background: var(--ion-color-primary);
-    padding: $padding;
-}
-
-.name {
-    color: #3B3B3B;
-    margin-bottom: 0;
-}
-
-p {
-    margin: 0.8em 0;
-}
-
-.info {
-    position: absolute;
-    bottom: $padding;
-    left: $padding;
-    color: #3b3b3b;
-}
-
-.property {
-    color: #fff;
-}
-
-/* Make semi-responsive */
-@media (max-width:700px) {
-    .card {
-        transform: scale(.5);
+/* Begin Media Queries*/
+@media screen and (max-width: 760px) {
+    #contact {
+        height: 1000px;
     }
 
-    .container:hover .card {
-        transform: scale(.5) rotateY(-180deg) translateZ(1px);
+    .section-header {
+        font-size: 65px;
     }
+
+    .social-media-list li {
+        height: 60px;
+        width: 60px;
+        line-height: 60px;
+    }
+
+    .social-media-list li:after {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+    }
+}
+
+@media screen and (max-width: 569px) {
+    #contact {
+        height: 1200px;
+    }
+
+    .section-header {
+        font-size: 50px;
+    }
+
+    .name,
+    .email,
+    textarea {
+        width: 280px;
+    }
+
+    .social-media-list {
+        left: 0;
+    }
+
+    .social-media-list li {
+        height: 55px;
+        width: 55px;
+        line-height: 55px;
+        font-size: 2rem;
+    }
+
+    .social-media-list li:after {
+        width: 55px;
+        height: 55px;
+        line-height: 55px;
+    }
+
 }

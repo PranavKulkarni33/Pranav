@@ -3,6 +3,7 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { PROFILE } from './shared/profile';
+import { LocalService } from './shared/local.service';
 
 @Component({
   selector: "app-root",
@@ -10,34 +11,35 @@ import { PROFILE } from './shared/profile';
   styleUrls: ["app.component.scss"],
 })
 export class AppComponent implements OnInit {
-  public profile = PROFILE;
+  public profile;
   public selectedIndex = 0;
   public appPages = [
     {
-      title: "Work",
-      url: "/work",
-      icon: "home",
+      title: "About",
+      url: "/about",
+      icon: "person",
     },
     {
-      title: "Resume",
-      url: "/resume",
-      icon: "book",
+      title: "Work",
+      url: "/work",
+      icon: "clipboard",
     },
     {
       title: "Posts",
       url: "/posts",
-      icon: "laptop",
+      icon: "pencil",
     },
     {
       title: "Contact",
       url: "/contact",
-      icon: "people",
+      icon: "at",
     },
   ];
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private local: LocalService
   ) {
     this.initializeApp();
   }
@@ -49,6 +51,12 @@ export class AppComponent implements OnInit {
     });
   }
 
+  getProfile() {
+    this.local.getJSON("profile").subscribe((data) => {
+      this.profile = data;
+    });
+  }
+
   ngOnInit() {
     const path = window.location.pathname.split("/")[1];
     if (path !== undefined) {
@@ -56,6 +64,8 @@ export class AppComponent implements OnInit {
         (page) => page.title.toLowerCase() === path.toLowerCase()
       );
     }
+
+    this.getProfile();
   }
 }
 

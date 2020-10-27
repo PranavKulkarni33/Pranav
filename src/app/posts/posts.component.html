@@ -1,4 +1,33 @@
-
 <ion-content>
-<app-header [title]="title"></app-header>
+    <app-header [title]="title"></app-header>
+
+    <div class="posts-container" *ngIf="posts">
+        <ion-card *ngFor="let post of posts">
+            <ion-item>
+                <ion-avatar slot="start">
+                    <img src="{{ profile.avatar }}" />
+                </ion-avatar>
+                <ion-label>
+                    <h3>{{ profile.name }}</h3>
+                    <p>{{ post.date || today | date }}</p>
+                </ion-label>
+            </ion-item>
+
+            <a href="{{ post.link }}" target="_blank">
+                <img class="ion-padding" width="100%" src="{{ post.image }}" alt="Give India" />
+            </a>
+
+            <ion-card-header>
+                <ion-card-title>{{ post.title }}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                {{ post.content }}
+                <ion-text class="ion-padding ion-margin-vertical" color="danger">
+                    <h4>
+                        <a href="{{ post.url }}" target="_blank"> {{post.urlName}} </a>
+                    </h4>
+                </ion-text>
+            </ion-card-content>
+        </ion-card>
+    </div>
 </ion-content>

@@ -1,4 +1,6 @@
 @import 'https://fonts.googleapis.com/css?family=Open+Sans|Roboto:300';
+@import url('https://fonts.googleapis.com/css?family=Poiret+One|Open+Sans');
+
 
 ion-menu ion-content {
   --background: var(--ion-item-background, var(--ion-background-color, #fff));
@@ -118,4 +120,75 @@ ion-note {
 
 ion-item.selected {
   --color: var(--ion-color-primary);
+}
+
+.blinking-cursor {
+  font-weight: 100;
+  font-size: 22px;
+  color: #2E3D48;
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes blink {
+
+  from,
+  to {
+    color: transparent;
+  }
+
+  50% {
+    color: white;
+  }
+}
+
+@-moz-keyframes blink {
+
+  from,
+  to {
+    color: transparent;
+  }
+
+  50% {
+    color: white;
+  }
+}
+
+@-webkit-keyframes blink {
+
+  from,
+  to {
+    color: transparent;
+  }
+
+  50% {
+    color: black;
+  }
+}
+
+@-ms-keyframes blink {
+
+  from,
+  to {
+    color: transparent;
+  }
+
+  50% {
+    color: white;
+  }
+}
+
+@-o-keyframes blink {
+
+  from,
+  to {
+    color: transparent;
+  }
+
+  50% {
+    color: white;
+  }
 }

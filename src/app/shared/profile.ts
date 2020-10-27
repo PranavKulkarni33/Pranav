@@ -3,8 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const PROFILE = {
-  title: 'Hrishi Potdar',
-  subtitle: 'Senior Front End Developer',
+  title: 'Hrishi',
+  subtitle: 'Frontend Developer',
   resume: 'https://drive.google.com/file/d/1qTuDED_4yHYBZS6Fz3W_S5GPEUV7Ovds/view?usp=sharing'
 };
 

@@ -1,15 +1,12 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { ResumeComponent } from './resume/resume.component';
 import { PostsComponent } from './posts/posts.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
+import { WorkComponent } from "./work/work.component";
+
 
 const routes: Routes = [
-  {
-    path: "resume",
-    component: ResumeComponent,
-  },
   {
     path: "posts",
     component: PostsComponent,
@@ -19,13 +16,14 @@ const routes: Routes = [
     component: ContactComponent,
   },
   {
-    path: "work",
+    path: "about",
     component: HomeComponent,
   },
   {
-    path: "",
-    component: HomeComponent,
+    path: "work",
+    component: WorkComponent,
   },
+  { path: "", redirectTo: "about", pathMatch: "full" },
 ];
 
 @NgModule({
