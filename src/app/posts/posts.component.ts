@@ -15,13 +15,13 @@ export class PostsComponent implements OnInit {
   constructor(private local: LocalService, public sanitizer: DomSanitizer) {}
 
   getPosts(): void {
-    this.local.getJSON('posts').subscribe((data) => {
-      this.posts = data;
-    });
-  }
+   this.local.getPosts().subscribe((data) => {
+    this.posts = data;
+  });
+}
 
   getProfile(): void {
-    this.local.getJSON('profile').subscribe((data) => {
+    this.local.getProfile().subscribe((data) => {
       this.profile = data;
     });
   }

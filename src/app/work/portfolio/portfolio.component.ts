@@ -8,11 +8,12 @@ import { LocalService } from "src/app/shared/local.service";
 })
 export class PortfolioComponent implements OnInit {
   portfolio: any;
+  profile: any;
   constructor(private local: LocalService) {}
 
   getProfile(): void {
-    this.local.getJSON('profile').subscribe((data) => {
-      this.portfolio = data.portfolio;
+    this.local.getProfile().subscribe((data) => {
+      this.portfolio = data['portfolio'];
     });
   }
 

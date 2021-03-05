@@ -52,7 +52,7 @@ export class AppComponent implements OnInit {
   }
 
   getProfile() {
-    this.local.getJSON("profile").subscribe((data) => {
+    this.local.getProfile().subscribe((data) => {
       this.profile = data;
     });
   }

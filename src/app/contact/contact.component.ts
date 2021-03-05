@@ -50,7 +50,7 @@ export class ContactComponent implements OnInit {
   }
 
   getProfile(): void {
-    this.local.getJSON("profile").subscribe((data) => {
+    this.local.getProfile().subscribe((data) => {
       this.profile = data;
     });
   }

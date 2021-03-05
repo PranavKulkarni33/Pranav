@@ -12,9 +12,9 @@ export class ProfileCardComponent implements OnInit {
   constructor(private local: LocalService, public sanitizer: DomSanitizer) {}
 
   getProfile(): void {
-    this.local.getJSON('profile').subscribe((data) => {
-      this.profile = data;
-    });
+   this.local.getProfile().subscribe((data) => {
+    this.profile = data;
+  });
   }
 
   ngOnInit() {
