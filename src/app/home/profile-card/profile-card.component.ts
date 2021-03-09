@@ -11,7 +11,7 @@ export class ProfileCardComponent implements OnInit {
   profile: any;
   constructor(private local: LocalService, public sanitizer: DomSanitizer) {}
 
-  getProfile(): void {
+  getProfile() {
    this.local.getProfile().subscribe((data) => {
     this.profile = data;
   });
