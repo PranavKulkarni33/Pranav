@@ -4,6 +4,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { PROFILE } from './shared/profile';
 import { LocalService } from './shared/local.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-root",
@@ -30,10 +31,15 @@ export class AppComponent implements OnInit {
       icon: "pencil",
     },
     {
+      title: "Resume",
+      url: "/resume",
+      icon: "book",
+    },
+    {
       title: "Contact",
       url: "/contact",
       icon: "at",
-    },
+    }
   ];
   constructor(
     private platform: Platform,
@@ -58,6 +64,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+
     const path = window.location.pathname.split("/")[1];
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(

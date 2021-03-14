@@ -4,6 +4,7 @@ import { PostsComponent } from './posts/posts.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { WorkComponent } from "./work/work.component";
+import { ResumeComponent } from './resume/resume.component';
 
 
 const routes: Routes = [
@@ -23,12 +24,16 @@ const routes: Routes = [
     path: "work",
     component: WorkComponent,
   },
-  { path: "", redirectTo: "about", pathMatch: "full" },
+  {
+    path: "resume",
+    component: ResumeComponent,
+  },
+  { path: '', component: HomeComponent },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
   exports: [RouterModule],
 })

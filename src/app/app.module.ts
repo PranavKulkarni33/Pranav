@@ -19,11 +19,14 @@ import { ProfileCardComponent } from "./home/profile-card/profile-card.component
 import { LocalService } from './shared/local.service';
 import { WorkComponent } from "./work/work.component";
 
+import  {  PdfViewerModule  }  from  'ng2-pdf-viewer';
+
 // 1. Import the libs you need
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { ResumeComponent } from './resume/resume.component';
 
 // 2. Add your credentials from step 1
 const config = {
@@ -46,6 +49,7 @@ const config = {
     PortfolioCardComponent,
     ProfileCardComponent,
     WorkComponent,
+    ResumeComponent
   ],
   entryComponents: [],
   imports: [
@@ -58,7 +62,8 @@ const config = {
     AngularFireModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    PdfViewerModule
   ],
   providers: [
     StatusBar,
