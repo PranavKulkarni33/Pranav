@@ -20,7 +20,7 @@ export class LocalService {
   }
 
   public getProfile() {
-    let hash = this.prefix+ 'QmWxcbQYoXPwSPNFof32ZUZEtdfs9ZhMENnoVQ37S584qY';
+    let hash = this.prefix+ 'QmQgPiTE8gQHj2dkKc1P6FgiejpE2UD7JgwwzWjjSFjCup';
     return this.http.get(hash)
   }
 
