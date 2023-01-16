@@ -93,31 +93,37 @@
         <ion-row size-xl="6" size-sm="12">
           <ion-col size="12">
             <ion-icon name="pin-outline" class="ion-padding-end"></ion-icon>
-            {{ profile.location }}
+            Toronto | Canada
           </ion-col>
 
           <ion-col size="12">
             <a href="tel:+1{{ profile.phoneNo }}" target="_blank" title="Give me a call">
               <ion-icon name="call-outline" class="ion-padding-end"></ion-icon>
-              {{ profile.phoneNo }}
+              +1 (437) 328 2883
             </a>
           </ion-col>
 
           <ion-col size="12">
             <a href="mailto:{{ profile.email }}" target="_blank" title="Send me an email">
               <ion-icon name="send-outline" class="ion-padding-end"></ion-icon>
-              {{ profile.email }}
+              kulkarnipranavmahesh@gmail.com
             </a>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col>
             <ion-icon name="at" class="ion-padding-end"></ion-icon>
-            <a class="ion-padding-end" *ngFor="let platform of profile.social" href="{{ platform.link }}"
+            <!-- <a class="ion-padding-end" *ngFor="let platform of profile.social" href="{{ platform.link }}"
               target="_blank">
               <img width="25" height="25" [src]="sanitizer.bypassSecurityTrustResourceUrl(platform.icon)"
                 alt="{{ platform.name }}" loading="lazy" />
-            </a>
+            </a> -->
+            <a class="icon" target="_blank" href="https://github.com/PranavKulkarni33"><img  width="25"
+              height="25" src="../../../assets/images/github1.png" alt=""></a>
+            <a class="icon" target="_blank" href="https://www.frontend-engine.com"><img  width="25"
+              height="25" src="../../../assets/images/FE-logo.png" alt=""></a>
+            <a class="icon_LinkedIn" target="_blank" href="https://www.linkedin.com/in/pranav-kulkarni-43279425b/"><img  width="25"
+              height="25" src="../../../assets/images/linkedin.png" alt=""></a>
           </ion-col>
         </ion-row>
       </div>

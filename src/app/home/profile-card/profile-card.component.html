@@ -6,30 +6,29 @@
   <header>
     <!-- here’s the avatar -->
     <a href="javascript:void(0)">
-      <img src="{{ profile?.avatar }}" loading="lazy" />
+      <img src="../../../assets/images/pranav1.jpg" loading="lazy" />
     </a>
 
     <!-- the username -->
-   <ion-text color="danger"> <h1>{{ profile.name }}</h1> </ion-text>
+   <ion-text color="danger"> <h1>Pranav</h1> </ion-text>
 
     <!-- and role or location -->
-    <h2>{{ profile.title }} - {{ profile.location }}</h2>
+    <h2>Frontend Developer - Toronto | Canada</h2>
   </header>
 
   <!-- bit of a bio; who are you? -->
   <ion-row class="profile-bio ion-padding ion-margin">
-    <ion-col [innerHTML]="profile.bio"></ion-col>
+    <!-- <ion-col [innerHTML]="profile.bio"></ion-col> -->
+    <p>Hi, I'm Pranav! I am a full stack developer. I started my journey in development 3 years ago and since then I have built applications in JAVA and am currently building websites in HTML/JavaScript/CSS using Angular CLI. My approach to programming and life in general is "process over result". I am open to learning in start-up environments and would also love to experience corporate culture. I believe communication is key and my openness to learn new technologies gives me a bird’s eye view.</p>
   </ion-row>
   <ul class="profile-social-links">
-    <li *ngFor="let platform of profile.social" class="ion-padding">
-      <a href="{{ platform.link }}" target="_blank">
-        <img
-          width="50"
-          height="50"
-          [src]="sanitizer.bypassSecurityTrustResourceUrl(platform.icon)"
-          alt="{{ platform.name }}" loading="lazy"
-        />
-      </a>
-    </li>
+    
+    <li><a class="icon" target="_blank" href="https://github.com/PranavKulkarni33"><img  width="50"
+      height="50" src="../../../assets/images/github1.png" alt=""></a></li>
+    <li><a class="icon" target="_blank" href="https://www.frontend-engine.com"><img  width="50"
+      height="50" src="../../../assets/images/FE-logo.png" alt=""></a></li>
+    <li><a class="icon_LinkedIn" target="_blank" href="https://www.linkedin.com/in/pranav-kulkarni-43279425b/"><img  width="50"
+      height="50" src="../../../assets/images/linkedin.png" alt=""></a></li>
+
   </ul>
 </div>

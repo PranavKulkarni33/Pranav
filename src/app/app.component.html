@@ -4,8 +4,8 @@
     <ion-menu contentId="main-content" side="start" type="push">
       <ion-content>
         <ion-list id="sidebar-list" *ngIf="profile">
-         <ion-text color="primary"> <ion-list-header> {{profile.name}} <span class="blinking-cursor">|</span> </ion-list-header> </ion-text>
-          <ion-text color="primary"> <ion-note> {{profile.title}} </ion-note> </ion-text>
+         <ion-text color="primary"> <ion-list-header> Pranav<span class="blinking-cursor">|</span> </ion-list-header> </ion-text>
+          <ion-text color="primary"> <ion-note> Frontend Developer </ion-note> </ion-text>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
