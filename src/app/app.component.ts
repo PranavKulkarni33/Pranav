@@ -21,14 +21,9 @@ export class AppComponent implements OnInit {
       icon: "person",
     },
     {
-      title: "Work",
+      title: "Projects / Freelancing",
       url: "/work",
       icon: "clipboard",
-    },
-    {
-      title: "Posts",
-      url: "/posts",
-      icon: "pencil",
     },
     {
       title: "Resume",
